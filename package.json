@@ -1,0 +1,39 @@
+{
+  "name": "blog-v5-on-heroku",
+  "version": "5.11.0",
+  "description": "Deploy latest ghost v5 on Heroku",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nixsanctuary/heroku-buildpack.git"
+  },
+  "keywords": [
+    "heroku, blog, ghost"
+  ],
+  "author": "blog",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nixsanctuary/heroku-buildpack/issues"
+  },
+  "homepage": "https://github.com/nixsanctuary/heroku-buildpack/#readme",
+  "engines": {
+    "node": "16.X"
+  },
+  "dependencies": {
+    "ghost-cli": "latest",
+    "casper": "github:TryGhost/Casper#main",
+    "headline": "github:TryGhost/Headline#main",
+    "edition": "github:TryGhost/Edition#main",
+    "alto" : "github:TryGhost/Alto#main",
+    "ruby" : "github:TryGhost/Ruby#main",
+    "lyra": "github:TryGhost/lyra#main",
+    "ghost-storage-adapter-s3": "^2.8.0",
+    "ghost-storage-cloudinary": "^2.2.5",
+    "knex-migrator": "^5.0.7"
+  },
+  "cacheDirectories": ["node_modules"],
+  "scripts": {
+     "postinstall": "ghost install --allow-root --no-check-empty --no-prompt --no-stack --no-setup --no-setup-linux-user --db sqlite3 && rm -rvf content  && cp -Rf package.json package-lock.json node_modules versions/*/; rm -rf node_modules ; echo 'INSTALL TO versions/*/ DONE' && cp -Rf versions/*/* .; echo 'INSTALL TO PWD DONE' && rm -rf versions current && bash -x bin/cloudinary.sh && bash -x bin/aws-s3.sh && bash -x bin/themes.sh && bash -x bin/init-deployment",
+     "start": "node index.js"
+  }
+}
