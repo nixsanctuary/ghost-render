@@ -32,6 +32,7 @@
     "knex-migrator": "^5.0.7",
      "mysql": "^2.18.1"
   },
+  "cacheDirectories": ["node_modules"],
   "scripts": {
      "postinstall": "ghost install --allow-root --no-check-empty --no-prompt --no-stack --no-setup --no-setup-linux-user --db sqlite3 && rm -rvf content  && cp -Rf package.json package-lock.json node_modules versions/*/; rm -rf node_modules ; echo 'INSTALL TO versions/*/ DONE' && cp -Rf versions/*/* .; echo 'INSTALL TO PWD DONE' && rm -rf versions current && bash -x bin/cloudinary.sh &&  chmod +x ./bin/create-config ./bin/wait-for-db && ./bin/create-config && bash -x bin/aws-s3.sh && bash -x bin/themes.sh && bash -x bin/init-deployment",
      "start": "node index.js"
