@@ -6,7 +6,7 @@ pwd
 echo "config.production.json →"
 cat config.production.json
 
-bash -x bin/wait-for-db
+bin/wait-for-db
 #ls -l node_modules
 echo CONTENT
 #ls -l content/
