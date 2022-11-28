@@ -1,11 +1,11 @@
 {
-  "name": "blog-v5-on-heroku",
-  "version": "5.11.0",
-  "description": "Deploy latest ghost v5 on Heroku",
+  "name": "ghost",
+  "version": "5.24.2",
+  "description": "Deploy latest ghost v5 on Render",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nixsanctuary/heroku-buildpack.git"
+    "url": "git+https://github.com/nixsanctuary/ghost-render.git"
   },
   "keywords": [
     "heroku, blog, ghost"
@@ -13,9 +13,9 @@
   "author": "blog",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nixsanctuary/heroku-buildpack/issues"
+    "url": "https://github.com/nixsanctuary/ghost-render/issues"
   },
-  "homepage": "https://github.com/nixsanctuary/heroku-buildpack/#readme",
+  "homepage": "https://github.com/nixsanctuary/ghost-render/#readme",
   "engines": {
     "node": "16.X"
   },
