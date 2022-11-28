@@ -105,7 +105,7 @@ function getMysqlConfig(connectionUrl) {
   }
 
   var dbConnection = {
-    host: dbConfig.hostname,
+    host: "cxmgkzhk95kfgbq4.cbetxkdyhwsb.us-east-1.rds.amazonaws.com" || dbConfig.hostname,
     port: dbConfig.port || "3306",
     user: dbUser,
     password: dbPassword,
