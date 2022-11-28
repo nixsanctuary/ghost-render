@@ -4,13 +4,13 @@ echo "Initializing the deployment…"
 echo "pwd →"
 pwd
 echo "config.production.json →"
-cat "config.production.json"
+cat config.production.json
 
-bin/wait-for-db
-ls -l node_modules
+bash -x bin/wait-for-db
+#ls -l node_modules
 echo CONTENT
-ls -l content/
+#ls -l content/
 echo THEMES
-ls -lah content/themes
+#ls -lah content/themes
 
-# knex-migrator init --mgpath ./
+knex-migrator init --mgpath ./
