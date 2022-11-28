@@ -20,7 +20,7 @@
     "node": "16.X"
   },
   "dependencies": {
-    "ghost-cli": "latest",
+    "ghost-cli": "^1.23.1",
     "casper": "github:TryGhost/Casper#main",
     "headline": "github:TryGhost/Headline#main",
     "edition": "github:TryGhost/Edition#main",
