@@ -1,7 +1,7 @@
 {
   "name": "ghost",
   "version": "5.24.2",
-  "description": "Deploy latest ghost v5 on Render",
+  "description": "Deploy latest Ghost v5 on Render",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -24,17 +24,16 @@
     "casper": "github:TryGhost/Casper#main",
     "headline": "github:TryGhost/Headline#main",
     "edition": "github:TryGhost/Edition#main",
-    "alto" : "github:TryGhost/Alto#main",
-    "ruby" : "github:TryGhost/Ruby#main",
+    "alto": "github:TryGhost/Alto#main",
+    "ruby": "github:TryGhost/Ruby#main",
     "lyra": "github:TryGhost/lyra#main",
     "ghost-storage-adapter-s3": "^2.8.0",
     "ghost-storage-cloudinary": "^2.2.5",
     "knex-migrator": "^5.0.7",
-     "mysql": "^2.18.1"
+    "mysql": "^2.18.1"
   },
-  "cacheDirectories": ["node_modules"],
   "scripts": {
-     "postinstall": "ghost install --allow-root --no-check-empty --no-prompt --no-stack --no-setup --no-setup-linux-user --db sqlite3 && rm -rvf content  && cp -Rf package.json package-lock.json node_modules versions/*/; rm -rf node_modules ; echo 'INSTALL TO versions/*/ DONE' && cp -Rf versions/*/* .; echo 'INSTALL TO PWD DONE' && rm -rf versions current && bash -x bin/cloudinary.sh &&  chmod +x ./bin/create-config ./bin/wait-for-db && ./bin/create-config && bash -x bin/aws-s3.sh && bash -x bin/themes.sh && bash -x bin/init-deployment",
-     "start": "node index.js"
+    "postinstall": "ghost install --allow-root --no-check-empty --no-prompt --no-stack --no-setup --no-setup-linux-user --db sqlite3 && rm -rvf content && cp -Rf package*.json node_modules versions/*/; rm -rf node_modules; echo 'INSTALL TO versions/*/ DONE' && cp -Rf versions/*/* .; echo 'INSTALL TO PWD DONE' && rm -rf versions current && bash -x bin/cloudinary.sh && chmod +x ./bin/create-config ./bin/wait-for-db && ./bin/create-config && bash -x bin/aws-s3.sh && bash -x bin/themes.sh && bash -x bin/init-deployment",
+    "start": "node index.js"
   }
 }
