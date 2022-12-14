@@ -1,6 +1,6 @@
 {
   "name": "ghost",
-  "version": "5.24.2",
+  "version": "5.25.4",
   "description": "Deploy latest Ghost v5 on Render",
   "main": "index.js",
   "repository": {
